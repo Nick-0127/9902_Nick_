@@ -713,6 +713,7 @@ MonoBehaviour:
   holdingDistanceDefault: 0.7
   pickupAttachPoint: {fileID: 8758625330158988813}
   dropoffPoint: {fileID: 6198030172775930838}
+  holdingPoint: {fileID: 1811824097404670101}
   hoverTextRig: {fileID: 5944605577564912931}
   hoverTextDisplay: {fileID: 998904273805121170}
   useKeyTag: '%USE_KEY%'
@@ -1063,6 +1064,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077189854255037248}
   m_CullTransparentMesh: 1
+--- !u!1 &2318741354592554390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1811824097404670101}
+  m_Layer: 8
+  m_Name: HoldPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1811824097404670101
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2318741354592554390}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 625460372771822230}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2417482250513879607
 GameObject:
   m_ObjectHideFlags: 0
@@ -3063,6 +3095,7 @@ Transform:
   - {fileID: 4234378730332811342}
   - {fileID: 8758625330158988813}
   - {fileID: 6198030172775930838}
+  - {fileID: 1811824097404670101}
   - {fileID: 2081082215184725289}
   m_Father: {fileID: 5477663902695651912}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

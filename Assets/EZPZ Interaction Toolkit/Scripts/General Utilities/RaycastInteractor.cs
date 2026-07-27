@@ -15,8 +15,6 @@ using TMPro;
 
 public class RaycastInteractor : MonoBehaviour
 {
-
-
     [Header("Primary Settings")]
     public Transform rayPointer;
     public LayerMask layerMask;
@@ -26,6 +24,7 @@ public class RaycastInteractor : MonoBehaviour
     public float holdingDistanceDefault = 1.5f;
     public Transform pickupAttachPoint;
     public Transform dropoffPoint;
+    public Transform holdingPoint;
 
     [Header("Hover Text Settings")]
     public GameObject hoverTextRig;
