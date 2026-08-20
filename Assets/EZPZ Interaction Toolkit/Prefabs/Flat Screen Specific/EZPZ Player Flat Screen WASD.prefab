@@ -713,6 +713,7 @@ MonoBehaviour:
   holdingDistanceDefault: 0.7
   pickupAttachPoint: {fileID: 8758625330158988813}
   dropoffPoint: {fileID: 6198030172775930838}
+  pickupStartPoint: {fileID: 7086838972655313530}
   holdingPoint: {fileID: 1811824097404670101}
   hoverTextRig: {fileID: 5944605577564912931}
   hoverTextDisplay: {fileID: 998904273805121170}
@@ -1089,7 +1090,7 @@ Transform:
   m_GameObject: {fileID: 2318741354592554390}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1996,6 +1997,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8758625330158988813}
+  - component: {fileID: 6643464568933270157}
   m_Layer: 0
   m_Name: PickupAttachPoint
   m_TagString: Untagged
@@ -2018,6 +2020,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 625460372771822230}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6643464568933270157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4714031401707705038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f1ce8e00f8490247b119b4132ad9654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TransformFollow
+  subject: {fileID: 1811824097404670101}
+  defaultSubjectTag: 
+  positionSyncRate: 6
+  offset: {x: 0, y: 0, z: 0}
+  autoSyncPosition: 1
+  yRotation: 0
+  autoSyncYRotation: 0
+  rotationSyncRate: 0.1
+  rotationDeltaThreshold: 15
+  autoSyncRotation: 0
 --- !u!1 &4744884651082206111
 GameObject:
   m_ObjectHideFlags: 0
@@ -2200,6 +2224,37 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &5166295470921211245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7086838972655313530}
+  m_Layer: 0
+  m_Name: PickupStartPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7086838972655313530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5166295470921211245}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.288}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 625460372771822230}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5318024925718239558
 GameObject:
   m_ObjectHideFlags: 0
@@ -3094,6 +3149,7 @@ Transform:
   - {fileID: 7110523511151488077}
   - {fileID: 4234378730332811342}
   - {fileID: 8758625330158988813}
+  - {fileID: 7086838972655313530}
   - {fileID: 6198030172775930838}
   - {fileID: 1811824097404670101}
   - {fileID: 2081082215184725289}

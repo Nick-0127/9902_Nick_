@@ -15,11 +15,14 @@ public class TransformFollow : MonoBehaviour
     public Vector3 offset;
     public bool autoSyncPosition = true;
 
-    [Header("Rotation Settings")]    
+    [Header("Y Rotation Settings")]    
     public float yRotation;
     public bool autoSyncYRotation = false;
     public float rotationSyncRate = 0.1f;
     public float rotationDeltaThreshold = 15f;
+
+    [Header("Full Rotation Settings (prioritised)")]
+    public bool autoSyncRotation = false;
     
 
     private void Start()
@@ -38,7 +41,11 @@ public class TransformFollow : MonoBehaviour
         if(autoSyncPosition)
             SyncPosGradual();
 
-        if (autoSyncYRotation)
+        if(autoSyncYRotation)
+        {
+            SyncRotation();
+        }
+        else if (autoSyncYRotation)
         {
             if (Vector3.Angle(subject.forward, transform.forward) >= rotationDeltaThreshold)
             {
@@ -51,6 +58,11 @@ public class TransformFollow : MonoBehaviour
     {
         if(subject != null)
             transform.position = Vector3.Lerp(transform.position, subject.position + offset, positionSyncRate * Time.deltaTime);
+    }
+
+    public void SyncRotation()
+    {
+        transform.rotation = subject.rotation;
     }
 
     public void SyncYRotation()

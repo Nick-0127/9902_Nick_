@@ -22,9 +22,19 @@ public class RaycastInteractor : MonoBehaviour
     public float rayLength = 15;
     public float touchDistanceDefault = 5;
     public float holdingDistanceDefault = 1.5f;
+
+    [Header("Holdable Settings")]
+    [Tooltip("The actual transform a holdable object is attached to")]
     public Transform pickupAttachPoint;
+
+    [Tooltip("Where holdables get detached from")]
     public Transform dropoffPoint;
-    public Transform holdingPoint;
+
+    [Tooltip("Used for visual indication; where a holdable object is seen to be first attached to")]
+    public Transform pickupStartPoint;
+
+    [Tooltip("Used for visual indication; where a holdable object eventually moved to. You'd usually want this to be out of the way.")]
+    public Transform holdingPoint;    
 
     [Header("Hover Text Settings")]
     public GameObject hoverTextRig;
@@ -77,14 +87,16 @@ public class RaycastInteractor : MonoBehaviour
         }
 
         if (dropoffPoint == null)
-            dropoffPoint = transform;
-        
+            dropoffPoint = transform;        
 
         if (rayPointer == null)
             rayPointer = transform;
 
         if (pickupAttachPoint == null)
             pickupAttachPoint = rayPointer;
+
+        if(pickupStartPoint == null)
+            pickupStartPoint = rayPointer;
 
         if (environmentHit != null)
         {
@@ -570,6 +582,7 @@ public class RaycastInteractor : MonoBehaviour
         }
         else
         {
+            pickupAttachPoint.position = pickupStartPoint.position;
             Vector3 attachPos = pickupAttachPoint.position;
 
             if (holdableSubject.customHoldDistance <= 0)
